@@ -39,3 +39,10 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Large files
+tafsir.epub
+tafsir_raw.txt
+tafsir_dump.json
+*.epub
+

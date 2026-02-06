@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noble Quran Companion - Reading View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#396a5a",
+                        "primary-content": "#8bbfb0", // Lighter variant for dark mode text
+                        "background-light": "#f6f5f3",
+                        "background-dark": "#1c2022",
+                        "surface-dark": "#252a2c",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "arabic": ["Amiri", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c2022;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #396a5a;
+            border-radius: 3px;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#121715] dark:text-[#f6f5f3] font-display selection:bg-primary selection:text-white antialiased overflow-hidden h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex-none bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10 dark:border-white/5 z-50 sticky top-0 transition-all duration-300">
+<div class="flex items-center justify-between px-4 py-3 h-16 max-w-lg mx-auto w-full">
+<button aria-label="Go Back" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/10 text-primary dark:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-2xl">chevron_left</span>
+</button>
+<div class="flex flex-col items-center justify-center flex-1 mx-2">
+<h2 class="text-base font-bold tracking-wide dark:text-white uppercase">Al-Fatiha</h2>
+<span class="text-xs text-primary dark:text-primary-content/80 font-medium">The Opener • Meccan • 7 Verses</span>
+</div>
+<button aria-label="Settings" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/10 text-primary dark:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area: Scrollable Verse List -->
+<main class="flex-1 overflow-y-auto w-full relative" id="scroll-container">
+<!-- Bismillah Header -->
+<div class="flex flex-col items-center justify-center py-12 px-6 text-center space-y-4 max-w-lg mx-auto">
+<div class="relative w-full flex justify-center py-4">
+<!-- Decorative minimalist pattern -->
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+<div class="w-32 h-32 rounded-full border border-primary dark:border-primary-content"></div>
+<div class="w-40 h-40 rounded-full border border-primary dark:border-primary-content absolute"></div>
+</div>
+<h1 class="font-arabic text-4xl md:text-5xl leading-tight dark:text-white z-10 relative drop-shadow-sm">
+                   بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+               </h1>
+</div>
+<p class="text-sm dark:text-gray-400 font-medium tracking-wide">In the name of Allah, the Entirely Merciful, the Especially Merciful</p>
+</div>
+<!-- Verses List -->
+<div class="pb-32 max-w-lg mx-auto">
+<!-- Verse 1 (Already in header technically, but often repeated or starting from verse 2 depending on count. Al-Fatiha counts Bismillah as verse 1 in some readings. Let's start with Al-Hamdu as Verse 2 for structure variety or standard Hafs as Verse 2) -->
+<!-- Actually standard Hafs counts Bismillah as Verse 1 for Fatiha. Let's do Verse 2: Al-Hamdu -->
+<!-- Verse 2 -->
+<article class="group relative flex flex-col py-8 px-5 border-b border-gray-200 dark:border-white/5 hover:bg-surface-dark/30 transition-colors duration-300">
+<!-- Verse Number & Actions Wrapper -->
+<div class="absolute left-4 top-8 flex flex-col gap-4 opacity-100 transition-opacity duration-300">
+<div class="flex flex-col gap-3">
+<button aria-label="Play Audio" class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+</button>
+<button aria-label="Like Verse" class="text-gray-400 hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button aria-label="Read Tafsir" class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</button>
+<button aria-label="Share" class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Content Wrapper (Offset for actions) -->
+<div class="pl-10">
+<!-- Arabic Text (RTL) -->
+<div class="w-full text-right mb-6 relative">
+<p class="font-arabic text-[32px] leading-[2.2] dark:text-white text-gray-900" dir="rtl">
+                            ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ
+                            <span class="inline-flex items-center justify-center w-10 h-10 align-middle mr-2 bg-primary/10 dark:bg-primary-content/10 rounded-full border border-primary/20 dark:border-primary-content/20">
+<span class="font-display text-sm font-bold text-primary dark:text-primary-content mt-[2px]">2</span>
+</span>
+</p>
+</div>
+<!-- Phonetic & Translation (LTR) -->
+<div class="flex flex-col items-start space-y-2 border-l-2 border-primary/30 dark:border-primary-content/20 pl-4 py-1">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Phonetic</p>
+<p class="text-sm dark:text-gray-400 text-gray-500 italic font-medium leading-relaxed">
+                            Al-ḥamdu lillāhi rabbi l-ʿālamīn
+                        </p>
+<div class="h-2"></div> <!-- Spacer -->
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Français</p>
+<p class="text-[17px] dark:text-[#f6f5f3] text-gray-800 leading-7 font-normal">
+                            Louange à Allah, Seigneur de l'univers.
+                        </p>
+</div>
+</div>
+</article>
+<!-- Verse 3 -->
+<article class="group relative flex flex-col py-8 px-5 border-b border-gray-200 dark:border-white/5 hover:bg-surface-dark/30 transition-colors duration-300">
+<!-- Actions Sidebar -->
+<div class="absolute left-4 top-8 flex flex-col gap-4 opacity-100 transition-opacity duration-300">
+<div class="flex flex-col gap-3">
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+</button>
+<button class="text-gray-400 hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</button>
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+</button>
+</div>
+</div>
+<div class="pl-10">
+<div class="w-full text-right mb-6">
+<p class="font-arabic text-[32px] leading-[2.2] dark:text-white text-gray-900" dir="rtl">
+                            ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                            <span class="inline-flex items-center justify-center w-10 h-10 align-middle mr-2 bg-primary/10 dark:bg-primary-content/10 rounded-full border border-primary/20 dark:border-primary-content/20">
+<span class="font-display text-sm font-bold text-primary dark:text-primary-content mt-[2px]">3</span>
+</span>
+</p>
+</div>
+<div class="flex flex-col items-start space-y-2 border-l-2 border-primary/30 dark:border-primary-content/20 pl-4 py-1">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Phonetic</p>
+<p class="text-sm dark:text-gray-400 text-gray-500 italic font-medium leading-relaxed">
+                            Ar-raḥmāni r-raḥīm
+                        </p>
+<div class="h-2"></div>
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Français</p>
+<p class="text-[17px] dark:text-[#f6f5f3] text-gray-800 leading-7 font-normal">
+                            Le Tout Miséricordieux, le Très Miséricordieux.
+                        </p>
+</div>
+</div>
+</article>
+<!-- Verse 4 -->
+<article class="group relative flex flex-col py-8 px-5 border-b border-gray-200 dark:border-white/5 hover:bg-surface-dark/30 transition-colors duration-300">
+<div class="absolute left-4 top-8 flex flex-col gap-4 opacity-100 transition-opacity duration-300">
+<div class="flex flex-col gap-3">
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+</button>
+<button class="text-gray-400 hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</button>
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+</button>
+</div>
+</div>
+<div class="pl-10">
+<div class="w-full text-right mb-6">
+<p class="font-arabic text-[32px] leading-[2.2] dark:text-white text-gray-900" dir="rtl">
+                            مَٰلِكِ يَوْمِ ٱلدِّينِ
+                            <span class="inline-flex items-center justify-center w-10 h-10 align-middle mr-2 bg-primary/10 dark:bg-primary-content/10 rounded-full border border-primary/20 dark:border-primary-content/20">
+<span class="font-display text-sm font-bold text-primary dark:text-primary-content mt-[2px]">4</span>
+</span>
+</p>
+</div>
+<div class="flex flex-col items-start space-y-2 border-l-2 border-primary/30 dark:border-primary-content/20 pl-4 py-1">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Phonetic</p>
+<p class="text-sm dark:text-gray-400 text-gray-500 italic font-medium leading-relaxed">
+                            Māliki yawmi d-dīn
+                        </p>
+<div class="h-2"></div>
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Français</p>
+<p class="text-[17px] dark:text-[#f6f5f3] text-gray-800 leading-7 font-normal">
+                            Maître du Jour de la Rétribution.
+                        </p>
+</div>
+</div>
+</article>
+<!-- Verse 5 -->
+<article class="group relative flex flex-col py-8 px-5 border-b border-gray-200 dark:border-white/5 hover:bg-surface-dark/30 transition-colors duration-300">
+<div class="absolute left-4 top-8 flex flex-col gap-4 opacity-100 transition-opacity duration-300">
+<div class="flex flex-col gap-3">
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+</button>
+<button class="text-gray-400 hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</button>
+<button class="text-gray-400 hover:text-primary dark:hover:text-primary-content transition-colors">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+</button>
+</div>
+</div>
+<div class="pl-10">
+<div class="w-full text-right mb-6">
+<p class="font-arabic text-[32px] leading-[2.2] dark:text-white text-gray-900" dir="rtl">
+                            إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
+                            <span class="inline-flex items-center justify-center w-10 h-10 align-middle mr-2 bg-primary/10 dark:bg-primary-content/10 rounded-full border border-primary/20 dark:border-primary-content/20">
+<span class="font-display text-sm font-bold text-primary dark:text-primary-content mt-[2px]">5</span>
+</span>
+</p>
+</div>
+<div class="flex flex-col items-start space-y-2 border-l-2 border-primary/30 dark:border-primary-content/20 pl-4 py-1">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Phonetic</p>
+<p class="text-sm dark:text-gray-400 text-gray-500 italic font-medium leading-relaxed">
+                            Iyyāka naʿbudu wa-iyyāka nastaʿīn
+                        </p>
+<div class="h-2"></div>
+<p class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-content/70">Français</p>
+<p class="text-[17px] dark:text-[#f6f5f3] text-gray-800 leading-7 font-normal">
+                            C'est Toi [Seul] que nous adorons, et c'est Toi [Seul] dont nous implorons secours.
+                        </p>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Bottom Audio Player (Contextual - Minimalist) -->
+<div class="fixed bottom-0 left-0 w-full z-40">
+<!-- Floating Action Button for quick play if player is dismissed (Optional, just showing player bar here) -->
+<!-- Player Bar -->
+<div class="bg-surface-dark/95 backdrop-blur-xl border-t border-white/5 p-4 pb-8 flex items-center justify-between shadow-2xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary-content overflow-hidden relative group">
+<!-- Abstract cover art placeholder -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-black/40" data-alt="Abstract gradient cover art for audio player"></div>
+<span class="material-symbols-outlined relative z-10">graphic_eq</span>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Surah Al-Fatiha</p>
+<p class="text-xs text-gray-400">Mishary Rashid Alafasy</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">skip_previous</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-content hover:text-primary transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[32px] ml-0.5">play_arrow</span>
+</button>
+<button class="text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">skip_next</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

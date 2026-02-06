@@ -1,0 +1,8 @@
+name = "quran-stats-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "quran-stats"
+database_id = "83288674-3a45-45da-89b0-23f36037b559"

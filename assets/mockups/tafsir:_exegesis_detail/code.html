@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tafsir Detail View</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#396a5a",
+                        "background-light": "#f6f5f3",
+                        "background-dark": "#1c2022",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "arabic": ["Scheherazade New", "Amiri", "serif"] 
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner reading experience */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Simulating a nice Arabic font stack without external load if system has them, otherwise fallback */
+        .font-arabic {
+            font-family: "Geeza Pro", "Nassim Arabic", "Amiri", "Arial", sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-300">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Sticky Header -->
+<!-- Z-index ensures it stays above scrolling content. Backdrop blur for modern iOS feel. -->
+<header class="sticky top-0 z-50 flex w-full items-center justify-between border-b border-primary/10 bg-background-light/95 px-4 py-3 backdrop-blur-md dark:border-white/5 dark:bg-background-dark/95">
+<button class="group flex h-10 w-10 items-center justify-center rounded-full text-primary transition-colors hover:bg-primary/10 active:scale-95 dark:text-white">
+<span class="material-symbols-outlined" style="font-size: 28px;">chevron_left</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-sm font-bold uppercase tracking-widest text-primary/80 dark:text-emerald-400/80">Surah Al-Baqarah</h2>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400">Verse 2:255</span>
+</div>
+<button class="group flex h-10 w-10 items-center justify-center rounded-full text-primary transition-colors hover:bg-primary/10 active:scale-95 dark:text-white">
+<span class="material-symbols-outlined" style="font-size: 24px;">text_fields</span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 overflow-y-auto pb-32 no-scrollbar">
+<div class="mx-auto max-w-2xl px-5 pt-6">
+<!-- Verse Anchor (Context Block) -->
+<!-- Designed as a distinct 'card' but blending with the page texture -->
+<div class="mb-10 rounded-2xl bg-[#e8e6e1] p-6 shadow-sm ring-1 ring-inset ring-black/5 dark:bg-[#25292b] dark:ring-white/5">
+<!-- Arabic Text -->
+<div class="font-arabic mb-6 text-right text-3xl leading-[2.2] text-[#1c2022] dark:text-[#f0f0f0]" dir="rtl">
+                        اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ
+                    </div>
+<!-- Translation -->
+<div class="border-l-2 border-primary pl-4 pt-1">
+<p class="text-lg font-medium leading-relaxed text-primary dark:text-emerald-100">
+                            Allah! There is no deity save Him, the Alive, the Eternal.
+                        </p>
+</div>
+</div>
+<!-- Divider / Ornament -->
+<div class="mb-8 flex justify-center opacity-30">
+<div class="h-1 w-1 rounded-full bg-primary mx-1"></div>
+<div class="h-1 w-1 rounded-full bg-primary mx-1"></div>
+<div class="h-1 w-1 rounded-full bg-primary mx-1"></div>
+</div>
+<!-- Tafsir Body -->
+<article class="prose prose-lg dark:prose-invert">
+<h1 class="mb-6 font-display text-2xl font-bold tracking-tight text-[#1c2022] dark:text-white">
+                        The Merits of Ayat al-Kursi
+                    </h1>
+<div class="space-y-6 text-[1.125rem] leading-[1.9] text-gray-800 dark:text-gray-300">
+<p>
+                            This verse is widely regarded as the greatest verse in the Book of Allah. It was reported in the Sahih that the Messenger of Allah <span class="text-primary text-sm font-bold align-middle dark:text-emerald-400">ﷺ</span> affirmed its status because it contains the <em>Ism Allah al-A'zam</em> (the Greatest Name of Allah).
+                        </p>
+<p>
+                            The linguistic composition of the verse begins with the divine name, followed by a declaration of His absolute oneness and eternal existence. The attributes <strong>Al-Hayy</strong> (The Ever-Living) and <strong>Al-Qayyum</strong> (The Sustainer of all existence) encompass all other divine attributes of perfection.
+                        </p>
+<p>
+                            Reciting this verse brings immense protection. It acts as a fortress for the believer against spiritual harm. Scholars have noted that the rhythm and flow of the verse in Arabic carry a unique weight, balancing majesty with mercy, and power with proximity.
+                        </p>
+<p>
+                           When one contemplates "Neither drowsiness overtakes Him nor sleep," it instills a profound sense of comfort. The Guardian who watches over the universe never tires, ensuring that not a single atom moves without His knowledge and permission. This negation of weakness serves to affirm His absolute perfection in life and sustainment.
+                        </p>
+</div>
+<!-- Source Citation -->
+<div class="mt-12 border-t border-primary/10 pt-4 dark:border-white/10">
+<p class="font-display text-sm font-medium uppercase tracking-wider text-gray-400">
+                            Source: Tafsir Ibn Kathir (Abridged)
+                        </p>
+</div>
+</article>
+</div>
+</main>
+<!-- Navigation Footer -->
+<!-- Floating Style for modern aesthetic -->
+<div class="absolute bottom-0 left-0 right-0 flex w-full justify-center bg-gradient-to-t from-background-light via-background-light/90 to-transparent pb-8 pt-12 dark:from-background-dark dark:via-background-dark/90 pointer-events-none">
+<div class="pointer-events-auto flex w-auto items-center gap-1 rounded-full bg-white p-1.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] ring-1 ring-black/5 backdrop-blur-sm dark:bg-[#2c3032] dark:shadow-black/40 dark:ring-white/10">
+<button class="group flex h-12 items-center gap-2 rounded-full bg-transparent px-6 text-sm font-bold text-gray-600 transition-all hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-0.5">arrow_back</span>
+<span class="hidden sm:inline">Prev Verse</span>
+</button>
+<div class="h-6 w-px bg-gray-200 dark:bg-white/10"></div>
+<button class="group flex h-12 items-center gap-2 rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md transition-all hover:bg-[#2d5447] active:scale-95">
+<span class="hidden sm:inline">Next Verse</span>
+<span class="sm:hidden">Next</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Script to handle dark mode toggle for testing (not required but good for preview consistency) -->
+<script>
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body></html>
