@@ -29,7 +29,13 @@
         "backgroundColor": "#FDF8F3"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.msdn.noblequrancompanionv2"
+      "package": "com.msdn.noblequrancompanionv2",
+      "versionCode": 1,
+      "permissions": [
+        "INTERNET",
+        "WAKE_LOCK",
+        "FOREGROUND_SERVICE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -43,6 +49,12 @@
         {
           "ios": {
             "deploymentTarget": "15.1"
+          },
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0",
+            "kotlinVersion": "1.8.10"
           }
         }
       ]
