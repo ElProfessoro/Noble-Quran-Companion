@@ -147,12 +147,9 @@ const ReaderScreen = () => {
                     showsVerticalScrollIndicator={false}
                     initialNumToRender={10}
                     maxToRenderPerBatch={10}
-                    windowSize={5}
-                    getItemLayout={(data, index) => ({
-                        length: 150, // Approximation height
-                        offset: 150 * index,
-                        index,
-                    })}
+                    windowSize={5} // Reduce memory usage
+                    removeClippedSubviews={true} // Essential for long lists (Android mainly, but helps iOS too)
+                    updateCellsBatchingPeriod={50} // 50ms batching
                     initialScrollIndex={initialVerse ? initialVerse - 1 : undefined}
                     onViewableItemsChanged={onViewableItemsChanged}
                     onScrollBeginDrag={handleScrollBegin}

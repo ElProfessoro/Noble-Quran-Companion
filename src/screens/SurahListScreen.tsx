@@ -103,6 +103,11 @@ const SurahListScreen = () => {
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id.toString()}
                 contentContainerStyle={{ paddingBottom: 20 }}
+                removeClippedSubviews={true}
+                initialNumToRender={15}
+                maxToRenderPerBatch={15}
+                windowSize={5}
+                showsVerticalScrollIndicator={false}
             />
         </SafeAreaView>
     );

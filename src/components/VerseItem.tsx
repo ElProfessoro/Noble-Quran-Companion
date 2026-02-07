@@ -14,17 +14,22 @@ interface VerseItemProps {
 }
 
 const VerseItem = ({ verse, onPressTafsir }: VerseItemProps) => {
-    const { showArabic, showPhonetic, showTranslation, theme: themeMode } = useSettingsStore();
-    const { currentSurahId, currentVerseId, isPlaying } = useAudioStore();
+    // Optimization: Select only what we need to prevent re-renders
+    const themeMode = useSettingsStore(state => state.theme);
+    const showArabic = useSettingsStore(state => state.showArabic);
+    const showPhonetic = useSettingsStore(state => state.showPhonetic);
+    const showTranslation = useSettingsStore(state => state.showTranslation);
+
+    // Optimization: Only re-render if THIS verse's playback state changes
+    const isThisVersePlaying = useAudioStore(state =>
+        state.isPlaying &&
+        state.currentSurahId === verse.surah_id &&
+        state.currentVerseId === verse.verse_number
+    );
     const { isFavorite, toggleFavorite } = useFavoritesStore();
 
     const theme = themes[themeMode];
     const isFav = isFavorite(verse.id);
-
-    // Check if THIS verse is currently playing
-    const isThisVersePlaying = isPlaying &&
-        currentSurahId === verse.surah_id &&
-        currentVerseId === verse.verse_number;
 
     const isHighlighted = isThisVersePlaying;
 
