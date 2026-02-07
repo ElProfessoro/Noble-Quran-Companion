@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, Modal, TouchableOpacity, ScrollView, SafeAreaView, StatusBar, Platform, Pressable, Animated } from 'react-native';
-import { FlashList } from '@shopify/flash-list';
+import { View, Text, StyleSheet, ActivityIndicator, Modal, TouchableOpacity, ScrollView, SafeAreaView, StatusBar, Platform, Pressable, Animated, FlatList } from 'react-native';
 import { Verse } from '../types';
 import { initDatabase, getDB, recordVerseRead } from '../db/database';
 import VerseItem from '../components/VerseItem';
@@ -18,7 +17,7 @@ const ReaderScreen = () => {
     const route = useRoute<ReaderScreenRouteProp>();
     const { surahId, initialVerse } = route.params;
 
-    const flashListRef = useRef<any>(null);
+    const listRef = useRef<FlatList>(null);
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
     const [verses, setVerses] = useState<Verse[]>([]);
@@ -139,14 +138,21 @@ const ReaderScreen = () => {
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
             >
-                <FlashList
-                    ref={flashListRef}
+                <FlatList
+                    ref={listRef}
                     data={verses}
                     renderItem={renderItem}
-                    // @ts-ignore
-                    estimatedItemSize={200}
                     keyExtractor={(item) => item.id.toString()}
                     contentContainerStyle={{ paddingBottom: 100 }}
+                    showsVerticalScrollIndicator={false}
+                    initialNumToRender={10}
+                    maxToRenderPerBatch={10}
+                    windowSize={5}
+                    getItemLayout={(data, index) => ({
+                        length: 150, // Approximation height
+                        offset: 150 * index,
+                        index,
+                    })}
                     initialScrollIndex={initialVerse ? initialVerse - 1 : undefined}
                     onViewableItemsChanged={onViewableItemsChanged}
                     onScrollBeginDrag={handleScrollBegin}
